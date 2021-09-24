@@ -6,6 +6,7 @@ cd Python-$PYTHON_VERSION
 ./configure --enable-optimizations
 make -j $(nproc)
 make altinstall
+cd ../
 rm Python-$PYTHON_VERSION.tgz
 rm -rf Python-$PYTHON_VERSION
 update-alternatives --install /usr/bin/python python /usr/local/bin/python3.9 1
