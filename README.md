@@ -29,3 +29,8 @@ This bit is for those people who think this all seems like magic.
    1. Remove the files listed in `cleanup-files.txt`
    2. Remove the `cleanup-files.txt` and `cleanup.sh` files themselves
 6. Finally, define the default command if the image is just run to be `bash` to provide a shell for interacting with
+
+`.gitlab-ci.yml` defines the CI pipeline.
+* 2 Jobs for the pipeline. Build and release.
+* Build job builds the docker image and uploads to container registry with a tag equal to the commit hash
+* Release job downloads the previously built image, tags it as latest and uploads it as latest

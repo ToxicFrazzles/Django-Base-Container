@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export PYTHON_VERSION 3.9.7
+export PYTHON_VERSION=3.9.7
 wget https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz
 tar -xf Python-$PYTHON_VERSION.tgz
 cd Python-$PYTHON_VERSION
