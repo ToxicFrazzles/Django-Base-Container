@@ -1,0 +1,20 @@
+# Basic stuff
+nginx
+nano
+default-libmysqlclient-dev
+build-essential
+git
+ca-certificates
+curl
+wget
+
+# Python build requirements
+zlib1g-dev
+libncurses5-dev
+libgdbm-dev
+libnss3-dev
+libssl-dev
+libsqlite3-dev
+libreadline-dev
+libffi-dev
+libbz2-dev

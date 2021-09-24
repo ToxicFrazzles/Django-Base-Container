@@ -1,0 +1,4 @@
+hypercorn
+django
+mysqlclient
+paramiko
