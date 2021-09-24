@@ -19,7 +19,7 @@ This bit is for those people who think this all seems like magic.
    2. Download a source code archive for the specified version
    3. Inflate the archive to obtain the source
    4. Enter the source directory
-   5. Run `configure` with added optimisations
+   5. Run `configure` with added optimisations if the environment variable OPTIMISE is defined
    6. Compile the source using the number of CPU cores the machine currently has
    7. Install the resulting python
    8. Remove the archive and source code
@@ -31,6 +31,7 @@ This bit is for those people who think this all seems like magic.
 6. Finally, define the default command if the image is just run to be `bash` to provide a shell for interacting with
 
 `.gitlab-ci.yml` defines the CI pipeline.
-* 2 Jobs for the pipeline. Build and release.
+* 3 Jobs for the pipeline: build, build-optimised and release.
 * Build job builds the docker image and uploads to container registry with a tag equal to the commit hash
-* Release job downloads the previously built image, tags it as latest and uploads it as latest
+* Build-optimised does the same as build but defines the OPTIMISE variable so that the python will be optimised
+* Release job downloads the previously built images, tags it as latest or latest-optimised and uploads it
