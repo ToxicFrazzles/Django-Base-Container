@@ -1,6 +1,4 @@
 # Basic stuff
-nginx
-nginx-extras
 openresty
 nano
 default-libmysqlclient-dev
