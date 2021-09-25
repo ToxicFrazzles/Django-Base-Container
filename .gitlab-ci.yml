@@ -17,13 +17,13 @@ before_script:
 build:
   stage: build
   script:
-    - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - docker build --pull --no-cache -t $CONTAINER_TEST_IMAGE .
     - docker push $CONTAINER_TEST_IMAGE
 
 build-optimised:
   stage: build
   script:
-    - docker build --pull -t "$CONTAINER_TEST_IMAGE-optimised" .
+    - docker build --pull --no-cache -t "$CONTAINER_TEST_IMAGE-optimised" .
     - docker push "$CONTAINER_TEST_IMAGE-optimised"
 
 release:
