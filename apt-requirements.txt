@@ -1,10 +1,13 @@
 # Basic stuff
-nginx
-nginx-extras
-openresty
 nano
 default-libmysqlclient-dev
 build-essential
+ca-certificates
+git
+curl
+wget
+gnupg
+libpcre3-dev
 
 # Python build requirements
 zlib1g-dev
