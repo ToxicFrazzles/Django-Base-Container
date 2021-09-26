@@ -13,6 +13,7 @@ RUN bash install_apt_packages.sh
 RUN bash build_nginx.sh
 # Add the custom built nginx to path
 ENV PATH=/opt/nginx/sbin:$PATH
+RUN mkdir -p /var/log/nginx
 
 # Build python (the latest version available in apt is quite old)
 RUN bash build_python.sh
