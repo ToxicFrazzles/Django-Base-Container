@@ -17,7 +17,7 @@ cd nginx-1.13.6/
     --add-module=../set-misc-nginx-module-0.33  \
     --with-cc-opt="-Wno-error=cast-function-type"
 
-make
+make -j $(nproc)
 make install
 
 cd ../
