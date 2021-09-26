@@ -8,6 +8,7 @@ curl
 wget
 gnupg
 libpcre3-dev
+gettext
 
 # Python build requirements
 zlib1g-dev
