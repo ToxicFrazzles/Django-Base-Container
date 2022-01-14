@@ -1,7 +1,0 @@
-# Requirements files
-apt-requirements.txt
-python-requirements.txt
-
-# Build and install scripts
-install_apt_packages.sh
-build_python.sh
