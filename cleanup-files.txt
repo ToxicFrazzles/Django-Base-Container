@@ -5,4 +5,3 @@ python-requirements.txt
 # Build and install scripts
 install_apt_packages.sh
 build_python.sh
-build_nginx.sh
