@@ -23,6 +23,8 @@ test-vault:
   stage: test
   interruptible: true
   image: $CONTAINER_TEST_IMAGE
+  before_script:
+    - ""
   script:
     - vault --version
 
