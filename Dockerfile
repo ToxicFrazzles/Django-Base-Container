@@ -9,8 +9,9 @@ RUN pip install -r python-requirements.txt
 # Cleanup files to not clutter the final image
 RUN rm python-requirements.txt
 
+RUN apt install -y lsb-release
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
-RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+RUN add-apt-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 RUN apt update && apt install vault -y
 
 CMD bash
