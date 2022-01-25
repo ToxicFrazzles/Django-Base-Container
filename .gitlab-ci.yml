@@ -18,12 +18,6 @@ build:
     - docker build --pull --no-cache -t $CONTAINER_TEST_IMAGE .
     - docker push $CONTAINER_TEST_IMAGE
 
-build-optimised:
-  stage: build
-  interruptible: true
-  script:
-    - docker build --pull --no-cache -t "$CONTAINER_TEST_IMAGE-optimised" .
-    - docker push "$CONTAINER_TEST_IMAGE-optimised"
 
 release:
   stage: release
@@ -31,6 +25,3 @@ release:
     - docker pull $CONTAINER_TEST_IMAGE
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
     - docker push $CONTAINER_RELEASE_IMAGE
-    - docker pull "$CONTAINER_TEST_IMAGE-optimised"
-    - docker tag "$CONTAINER_TEST_IMAGE-optimised" "$CONTAINER_RELEASE_IMAGE-optimised"
-    - docker push "$CONTAINER_RELEASE_IMAGE-optimised"
