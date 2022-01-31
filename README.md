@@ -10,28 +10,8 @@ TODO: Add instructions on how to use the image...
 This bit is for those people who think this all seems like magic.
 
 `Dockerfile` describes how the image is built. What files are copied, what scripts are run
-1. Start by copying required scripts and files into the image
-2. Run the `install_apt_packages.sh` script
-   1. Update apt
-   2. Install packages listed in `apt-requirements.txt`
-3. Run the `build_python.sh` script
-   1. Define the python version as an environment variable for quick and easy updating
-   2. Download a source code archive for the specified version
-   3. Inflate the archive to obtain the source
-   4. Enter the source directory
-   5. Run `configure` with added optimisations if the environment variable OPTIMISE is defined
-   6. Compile the source using the number of CPU cores the machine currently has
-   7. Install the resulting python
-   8. Remove the archive and source code
-   9. Make it so that just running `python` or `pip` will use the freshly compiled Python
-4. Run the newly installed `pip` to install the Python packages listed in `python-requirements.txt`
-5. Run the `cleanup.sh` script to remove the files that are not needed in the final copy of the image
-   1. Remove the files listed in `cleanup-files.txt`
-   2. Remove the `cleanup-files.txt` and `cleanup.sh` files themselves
-6. Finally, define the default command if the image is just run to be `bash` to provide a shell for interacting with
-
-`.gitlab-ci.yml` defines the CI pipeline.
-* 3 Jobs for the pipeline: build, build-optimised and release.
-* Build job builds the docker image and uploads to container registry with a tag equal to the commit hash
-* Build-optimised does the same as build but defines the OPTIMISE variable so that the python will be optimised
-* Release job downloads the previously built images, tags it as latest or latest-optimised and uploads it
+1. Using the latest Python 3 container image
+2. Copy the `python-requirements.txt` file to the image
+3. Install the python requirements on the image
+4. Remove the `python-requirements.txt` file
+5. Default command when running the image standalone is `bash`
